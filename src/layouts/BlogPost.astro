@@ -17,13 +17,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 			
 			
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
 			.date {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
@@ -34,14 +27,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		</style>
 	</head>
 
-	<body>
+	<body class="bg-black ">
 		<Header />
-		<main>
+		<main class="text-green">
 			<article class="flex justify-center items-center mt-8 flex-col">
 					<img class="px-6 rounded-lg" src={heroImage} alt="" />
-				<div class="prose">
-					<div class="title">
-						<h1 class="text-center font-bold text-2xl">{title}</h1>
+				<div class="mx-8 lg:mx-24">
+					<div class="">
+						<h1 class="text-center my-4 font-bold text-2xl">{title}</h1>
 						<hr />
 					</div>
 					<slot />
