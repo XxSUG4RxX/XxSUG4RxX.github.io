@@ -20,21 +20,42 @@ const posts = (await getCollection('blog')).sort(
                 width: 100%;
                 aspect-ratio: 1 / 1;
             }
+
+            @keyframes spin {
+            from {
+            transform: rotate(0deg);
+            }
+             to {
+            transform: rotate(360deg);
+            }
+    }
+
+    .spin {
+        animation: spin 15s linear infinite;
+    }
+    @media (min-width: 1024px) {
+        .spin:hover {
+            animation-duration: 1s;
+        }
+    }
+            
         </style>
     </head>
-    <body>
+    <body class="bg-black">
         <Header />
-        <main>
+        <main class="text-green">
             <section>
 				<h2 class="flex justify-center items-center my-10">PROJETS</h2>
 				<ul class="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-8">
                     {
                         posts.map((post) => (
-                            <li class="w-full">
+                            <li class="w-full ">
                                 <a href={`/blog/${post.slug}/`} class="w-full">
-                                    <img class="rounded-full mb-4" src={post.data.heroImage} alt={post.data.title}/>
+                                <div class="">
+                                    <img class="border-4 border-green rounded-full spin" src={post.data.heroImage} alt={post.data.title}/>
+                                </div>
                                 </a>
-                                <p class=" text-center text-2xl">{post.data.title}</p>
+                                <p class="text-center mt-4 text-2xl">{post.data.title}</p>
                             </li>
                         ))
                     }
