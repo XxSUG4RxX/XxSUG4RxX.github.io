@@ -32,9 +32,9 @@ const posts = (await getCollection('blog')).sort(
                         posts.map((post) => (
                             <li class="w-full">
                                 <a href={`/blog/${post.slug}/`} class="w-full">
-                                    <img class="rounded-lg mb-4" src={post.data.heroImage} alt={post.data.title}/>
-                                    <p class=" text-center text-2xl">{post.data.title}</p>
+                                    <img class="rounded-full mb-4" src={post.data.heroImage} alt={post.data.title}/>
                                 </a>
+                                <p class=" text-center text-2xl">{post.data.title}</p>
                             </li>
                         ))
                     }
