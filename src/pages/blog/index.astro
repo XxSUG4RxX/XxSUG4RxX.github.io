@@ -46,13 +46,15 @@ const posts = (await getCollection('blog')).sort(
         <main class="text-green">
             <section>
 				<h2 class="flex justify-center items-center my-10">PROJETS</h2>
-				<ul class="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-8">
+				<ul class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-8">
                     {
                         posts.map((post) => (
                             <li class="w-full ">
                                 <a href={`/blog/${post.slug}/`} class="w-full">
-                                <div class="lg:m-6">
-                                    <img class="border-4 border-green rounded-full spin" src={post.data.heroImage} alt={post.data.title}/>
+                                <div class="relative lg:m-6">
+                                    <img class="border-4 lg:border-[5px] xl:border-8 2xl:border-[12px] border-green rounded-full spin" src={post.data.heroImage} alt={post.data.title}/>
+                                    <div class="absolute top-1/2 left-1/2 w-16 lg:w-12 xl:w-16 2xl:w-28 h-16 lg:h-12 xl:h-16 2xl:h-28 bg-green rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                                    <div class="absolute top-1/2 left-1/2 w-12 lg:w-8 xl:w-12 2xl:w-24 h-12 xl:h-12 2xl:h-24 lg:h-8 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
                                 </div>
                                 </a>
                                 <p class="text-center mt-4 text-2xl">{post.data.title}</p>
