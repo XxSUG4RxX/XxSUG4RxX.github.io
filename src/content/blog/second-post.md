@@ -49,7 +49,7 @@ Concept : Mettre en avant une esthétique rétro-futuriste en intégrant des per
 <p class="text-center my-6">VIDEO</p>
 
 <div class="flex w-full justify-center items-center mb-20">
-<video controls class="rounded-xl w-96">
+<video controls class="rounded-xl w-96" poster="/hiero/covervideo.svg">
   <source src="/hiero/video.mp4" type="video/mp4">
 </video>
 </div>
