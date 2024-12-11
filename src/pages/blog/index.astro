@@ -51,7 +51,7 @@ const posts = (await getCollection('blog')).sort(
                         posts.map((post) => (
                             <li class="w-full ">
                                 <a href={`/blog/${post.slug}/`} class="w-full">
-                                <div class="">
+                                <div class="lg:m-6">
                                     <img class="border-4 border-green rounded-full spin" src={post.data.heroImage} alt={post.data.title}/>
                                 </div>
                                 </a>
